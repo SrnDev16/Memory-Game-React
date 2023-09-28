@@ -1,0 +1,44 @@
+.MemoryGame {
+  width: 700px;
+  height: 700px;
+  background-color: #f7eedd;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+.memoryCard {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  background-image: linear-gradient(to right, #ff7f50, #dd6236);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, 0.2);
+}
+.memoryCard:active{
+transition: transform 0.5s;
+}
+.memoryCard.flip{
+  transform: rotateY(180deg);
+}
+.BackFace,
+.FrontFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  backface-visibility: hidden;
+}
+.FrontFace {
+  transform: rotateY(180deg);
+}
